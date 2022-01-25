@@ -1,82 +1,86 @@
-let url="https://61ea3a487bc0550017bc65f8.mockapi.io/user";
+let button = document.querySelector('.btn');
 
-function getdata(){
-  fetch(url,{
-    method:"GET",
-    header:{
-      "Content Type":"application/json"
-    },
-  })
-  .then((result)=>result.json())
-  .then((data)=>{
-    console.log(data);
-  })
-  .catch((error)=>{
-    console.log(error);
-  })
-}
-// getdata();
 
-function creatData(){
-  let data={
-    name:"Abhay Kumar",
-    phone: "9999-895-695",
-    city:"Noida"
-  };
-  fetch(url, {
-    method:"POST",
-    body:JSON.stringify(data),
-    header:{
-      "Content Type":"application/json",
-    },
-  }).then((result)=>result.json())
-  .then((data)=>{
-    console.log(data);
-  })
-  .catch((error)=>{
-  console.log(error);
-  });
-}
 
-// creatData();
-getdata();
+// change font size 
 
-// upate the data
-function updateData(){
-  let data={
-    name:"Rohit kumar",
-    phone:"8593034884",
-    city:"Delhi"
-  };
-  fetch(url + "/4",{
-    method:"PUT",
-    body:JSON.stringify(data),
-    header:{
-      "Content Type": "application/json",
-    },
-  })
-  .then((result)=>result.json()).then((data)=>{
-    console.log(data)
-  })
-  .catch((error)=>{
-    console.log(error);
-  });
-}
+button.addEventListener('click', function(){
+  let data = document.getElementsByTagName('P');
+  console.log(data);
 
-// updateData();
+  for (i=0; i <data.length; i++) {
+    data[i].style.fontSize+="32px";
+  }
+  
+})
 
-// delete the data
+// change font color
 
-function deleteData(){
-  fetch(url + "/5",{
-    method: "DELETE",
 
-  })
-  .then((result)=> result.json()).then((data)=>{
-    console.log(data);
-  }).catch((error)=>{
-    console.log(error);
-  });
+button.addEventListener('click', function(){
+  let data = document.getElementsByTagName('P');
+  console.log(data);
+ 
+  for (i=0; i <data.length; i++) {
+    data[i].style.color+="blue";
+  }
+  
+})
+
+// change the content 
+
+button.addEventListener('click', function(){
+  let data = document.getElementsByTagName('P');
+  console.log(data);
+ 
+  for (i=0; i <data.length; i++) {
+    data[0].innerHTML="Content change by button";
+  }
+  
+})
+
+button.addEventListener('click', function(){
+  let data = document.getElementsByTagName('P');
+  console.log(data);
+  // data.getElementsByTagName('P')[1].innerHTML = 'My name is Rohit';
+  for (i=0; i <data.length; i++) {
+    data[1].style.opacity ="0";
+  }
+  
+})
+
+// first method showing error
+
+
+// let newbutton=document.queryCommandValue('.button');
+
+// newbutton.addEventListener('click',function(){
+//   document.querySelector('.new').innerHTML="Abhay";
+// })
+
+
+
+// second method
+  
+function change(){
+  document.querySelector('.new').innerHTML="abhay";
 }
 
-deleteData();
+
+
+
+let tablebtn = document.querySelector(".tablebtn");
+
+tablebtn.addEventListener('click',function(){
+let name=document.querySelector('#first_name').value;
+let city=document.querySelector('#city_name').value;
+
+console.log(name);
+console.log(city);
+
+  let tablerow=document.querySelector('.table').insertRow();
+  let firstrow=tablerow.insertCell(0);
+  let secondrow=tablerow.insertCell(1);
+  firstrow.innerHTML=`${name}`;
+  secondrow.innerHTML=`${city}`;
+})
