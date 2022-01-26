@@ -1,9 +1,31 @@
-body{
-    text-align: center;
-}
 
-
-img{
-    width: 260px;
-    height: 320px;
-}
+body {
+    background-color: #9b89f0	;
+  }
+   h1 {
+      font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+   }
+  
+  #display {
+      overflow: auto;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 100px;
+  
+  }
+  
+    
+  .result {
+      border: 2px solid #f09289;
+      color: black;
+      background-color: #f0c589;
+      border-radius: 5px;
+      padding: 5px;
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+      }
+      p{
+          font-weight: bold;
+      }

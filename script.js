@@ -1,31 +1,34 @@
-let mybtn = document.querySelector('.mybtn');
 
-mybtn.addEventListener('click', getCatPics);
 
-async function getCatPics() {
 
-    // generate pic only one 
-    let showpic = document.querySelector('.ImgDiv')
-    showpic.innerHTML = '';
+async function getBooks() {
 
-    try {
-         await fetch("https://api.thecatapi.com/v1/images/search", {
-            method: "GET",
+    
+    var url = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyAsDqHTrD_5tfMfSg8r7rZ-V-pZUDZQa7M";
+    try{
+        await fetch(url,{
+            method:"GET",
             headers: {
-                'Content-Type': 'application/json'
-            },
+                "Content-Type": "application/json"
+            }
         })
-            .then((response) => response.json()).then((data) => {
-                let imgUrl = data[0].url;//take only only url from the api object
-                // console.log(imgUrl);
-                let createImgElement = document.createElement('img');//Creat a img element
-                createImgElement.setAttribute('src', `${imgUrl}`);
-                let showpic = document.querySelector('.ImgDiv')
-                showpic.appendChild(createImgElement);
-            })
-    }
-    catch (error) {
-        console.log(error);
-    }
+        .then((response) => response.json()).then((data) => {
+            console.log(data);
+            var items=data.items;
+            for(var i=0; i<items.length; i++){
+                console.log(items[i].volumeInfo);
+                display.innerHTML +=  `<div class = "result"><img src="${items[i].volumeInfo.imageLinks.smallThumbnail}">
+                
+         <p><u> ${items[i].volumeInfo.title} </u></p><br><p> ${items[i].volumeInfo.authors}</p> 
+        
+    </div><br><br><br>`
+
+            }
+        })
+
+        }catch(e) {
+            console.log(e);
+            display.innerHTML += "";
+        }
 }
-getCatPics();
+       
