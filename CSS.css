@@ -1,31 +1,42 @@
+body{
+    background:linear-gradient(rgb(218, 152, 30),white,green);
+}
 
-body {
-    background-color: #9b89f0	;
-  }
-   h1 {
-      font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-   }
-  
-  #display {
-      overflow: auto;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 100px;
-  
-  }
-  
-    
-  .result {
-      border: 2px solid #f09289;
-      color: black;
-      background-color: #f0c589;
-      border-radius: 5px;
-      padding: 5px;
-      width: 300px;
-      height: 300px;
-      display: inline-block;
-      }
-      p{
-          font-weight: bold;
-      }
+.span{
+    border: 2px solid black;
+    padding: 4px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: fit-content;
+    background:linear-gradient(green, white)
+}
+
+.form-control{
+    border: 5px solid rgb(155, 182, 58);
+    /* background:linear-gradient(rgb(218, 152, 30),white,green); */
+}
+.form-control:hover{
+    cursor: pointer;
+    background-color: azure;
+    /* background:linear-gradient(rgb(218, 152, 30),white,green); */
+}
+
+.para{
+    font-size:25px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+.list{
+    font-weight: bold;
+}
+.checkbox{
+    margin-right: 5px;
+    padding: 10px;
+}
+.list-block{
+    width:fit-content;
+    font-size:25px;
+    font-weight: bold;
+
+}
